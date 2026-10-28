@@ -10,15 +10,17 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 
 const answer = `
+
 flowchart TD
-    A("Start") --> B["vender bebida alcohólica."]
-    B["vender bebida alcohólica."] --> D{"edad >=18"}
-    D{"edad >=18"} --> E["si"]
-    D{"edad >=18"} --> C["no"]
-    H["no puede beber"] --> G("Fin")
-    F["puede beber"] --> G("Fin")
-    E["si"] --> F["puede beber"]
-    C["no"] --> H["no puede beber"]
+
+    A("Start") --> B["Cumpleaños de Juliana"]
+    B["Cumpleaños de Juliana"] --> C{"¿Edad=> 18?"}
+    C{"¿Edad=> 18?"} --> D["Si"]
+    C{"¿Edad=> 18?"} --> E["No"]
+    D["Si"] --> F["Puede beber"]
+    E["No"] --> G["No puede beber"]
+    G["No puede beber"] --> H("Fin")
+    F["Puede beber"] --> H("Fin")
 
 `;
 // Do not modify this

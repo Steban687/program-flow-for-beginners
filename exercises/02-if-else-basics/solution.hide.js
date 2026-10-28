@@ -1,11 +1,12 @@
 const answer = `
 flowchart TD
-    A(["Start"]) --> B["Ask age"]
-    B["Ask age"] --> C{"Age >= 18?"}
-    C{"Age >= 18?"} -->|"Yes"| D["Can drink alcohol"]
-    C{"Age >= 18?"} -->|"No"| E["Cannot drink alcohol"]
-    D["Can drink alcohol"] --> F(["End"])
-    E["Cannot drink alcohol"] --> F(["End"])
-`;
 
+  A("Start") --> B["Fiesta"]
+    B["Fiesta"] --> C{"edad =>18"}
+    C{"edad =>18"} --> E["si"]
+    C{"edad =>18"} --> F["no"]
+    F["no"] --> D["puede beber"]
+    E["si"] --> D["puede beber"]
+    D["puede beber"] --> G["fin"]
+    
 module.exports = answer.trim();

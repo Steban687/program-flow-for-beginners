@@ -7,7 +7,19 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
 flowchart TD
-    A[start] --> B[end]
+    A("Start") --> B["(semáforo)    cambio de luces"]
+    F{"si"} --> C["Color= verde"]
+    F{"si"} --> D["Color= Amarillo"]
+    F{"si"} --> E["Color= Rojo"]
+    C["Color= verde"] --> G["avanzar"]
+    D["Color= Amarillo"] --> H["reducir velocidad"]
+    E["Color= Rojo"] --> I["detenerse"]
+    G["avanzar"] --> J("fin")
+    H["reducir velocidad"] --> J("fin")
+    I["detenerse"] --> J("fin")
+    B["(semáforo)    cambio de luces"] --> F{"si"}
+
+
 `;
 
 module.exports = answer.trim();
