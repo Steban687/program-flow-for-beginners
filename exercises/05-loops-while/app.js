@@ -8,12 +8,12 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 const answer = `
 flowchart TD
     A("Inicio") --> B["Pedir contraseña"]
-    B["Pedir contraseña"] --> E["¿Contraseña Correcta?"]
-    E["¿Contraseña Correcta?"] --> D{"No"}
-    D{"No"} --> B["Pedir contraseña"]
-    E["¿Contraseña Correcta?"] --> C{"Si"}
-    C{"Si"} --> F["Acceso Concedido"]
-    F["Acceso Concedido"] --> G("fin")
+    C{"¿contraseña correcta?"} -->|"si"| F["valida"]
+    F["valida"] --> G("fin")
+    B["Pedir contraseña"] --> C{"¿contraseña correcta?"}
+    C{"¿contraseña correcta?"} -->|"no"| D["intentar de nuevo"]
+    D["intentar de nuevo"] --> B["Pedir contraseña"]
+
 `;
 
 module.exports = answer.trim();
