@@ -6,17 +6,13 @@ Edita solo el flujo Mermaid dentro de `answer`.
 Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
-flowchart TD
-    A("Start") --> B["pedir el e mail"]
-    B["pedir el e mail"] --> C{"e mail valido?"}
-    D["Inválido"] --> F["Intentar Nuevamente"]
-    F["Intentar Nuevamente"] --> C{"e mail valido?"}
-    C{"e mail valido?"} --> E["Si"]
-    E["Si"] --> G["Continuar Registro"]
-    G["Continuar Registro"] --> H("Fin")
-    C{"e mail valido?"} --> I["no"]
-    I["no"] --> D["Inválido"]
-
+flowchart LR
+    A("Inicio") --> B["Pedir e mail"]
+    B["Pedir e mail"] --> D{"¿Email válido?"}
+    D{"¿Email válido?"} -->|"no"| C["intentar de nuevo"]
+    C["intentar de nuevo"] --> B["Pedir e mail"]
+    D{"¿Email válido?"} -->|"si"| E["continuar registro"]
+    E["continuar registro"] --> F("Fin")
 `;
 
 module.exports = answer.trim();

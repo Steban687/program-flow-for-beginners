@@ -7,14 +7,16 @@ Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
 flowchart TD
-    A("Start") --> B["i=1"]
-    B["i=1"] --> C{"¿i<=5?"}
-    C{"¿i<=5?"} --> D["Sí"]
-    C{"¿i<=5?"} --> E["No Resume"]
-    E["No Resume"] --> G["Mostrar Resume"]
-    G["Mostrar Resume"] --> H("Fin")
-    D["Sí"] --> F{"i=i+1"}
-    F{"i=i+1"} --> C{"¿i<=5?"}
+    B["i=1"] --> C{"¿i <= 5?"}
+    C{"¿i <= 5?"} -->|"si"| D["Calificar tarea i"]
+    C{"¿i <= 5?"} -->|"no"| E["promedio"]
+    A("Start") --> F["calificar 5 tareas"]
+    F["calificar 5 tareas"] --> B["i=1"]
+    E["promedio"] --> G("Fin")
+    D["Calificar tarea i"] --> H["i = i + 1"]
+    H["i = i + 1"] --> C{"¿i <= 5?"}
+
+
 
 `;
 

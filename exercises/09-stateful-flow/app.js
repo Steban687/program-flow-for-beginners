@@ -6,15 +6,15 @@ Edita solo el flujo Mermaid dentro de `answer`.
 Manten esta forma: const answer = `...`; module.exports = answer.trim();
 */
 const answer = `
-flowchart TD
-    A("Start") --> B["Torniquete Bloqueado"]
-    B["Torniquete Bloqueado"] --> C["Moneda"]
-    C["Moneda"] --> D["Empujar"]
-    D["Empujar"] --> E["Torniquete desbloqueado"]
-    E["Torniquete desbloqueado"] --> F["persona pasa"]
-    F["persona pasa"] --> B["Torniquete Bloqueado"]
-    B["Torniquete Bloqueado"] --> G["No hay mas eventos"]
-    G["No hay mas eventos"] --> H("Fin")
+flowchart LR
+    A("Inicio") --> B["locked"]
+    F["No more events"] --> G("fin")
+    C["pass"] --> B["locked"]
+    B["locked"] --> F["No more events"]
+    B["locked"] -->|"coin"| H["Unlocked"]
+    H["Unlocked"] -->|"push"| C["pass"]
+
+
 
 `;
 
