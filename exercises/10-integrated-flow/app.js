@@ -17,21 +17,6 @@ flowchart TD
     H["Insertar dinero"] --> D{"¿Selección válida?"}
     F["Entregar producto"] --> I["Devolver dinero"]
     I["Devolver dinero"] --> G("fin")
-=======
-flowchart LR
-    A("Inicio") --> B["Seleccionar de producto"]
-    F["aqui tienes tu producto"] --> J["se devuelve el cambio"]
-    J["se devuelve el cambio"] --> G("fin")
-    E{"¿Selección válida?"} -->|"no"| C["invalida"]
-    B["Seleccionar de producto"] --> E{"¿Selección válida?"}
-    C["invalida"] --> B["Seleccionar de producto"]
-    E{"¿Selección válida?"} --> H["Insertar  dinero"]
-    H["Insertar  dinero"] --> D{"¿Dinero suficiente?"}
-    D{"¿Dinero suficiente?"} -->|"si"| F["aqui tienes tu producto"]
-    D{"¿Dinero suficiente?"} -->|"no"| I["insertar mas dinero"]
-    I["insertar mas dinero"] --> D{"¿Dinero suficiente?"}
-
->>>>>>> 0dde47f (intentos fallidos de flijograma ejerciocio 10)
 
 `;
 
